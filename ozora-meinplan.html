@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Ozora 2026 – Mein Plan</title>
+<style>
+:root{--bg:#06020f;--surface:#0d0820;--border:#1e1540;--text:#e8e0f8;--muted:#5a5080;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;
+  padding:16px 12px 60px;max-width:700px;margin:0 auto;}
+header{text-align:center;margin-bottom:20px;}
+header h1{font-size:20px;font-weight:800;
+  background:linear-gradient(90deg,#c026d3,#f59e0b);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nav{display:flex;gap:6px;justify-content:center;margin-bottom:18px;flex-wrap:wrap;}
+.nav a{padding:7px 14px;border-radius:999px;border:1px solid var(--border);
+  background:var(--surface);color:var(--muted);text-decoration:none;
+  font-size:12px;font-weight:600;touch-action:manipulation;}
+.nav a.active{background:#1a0030;color:#e879f9;border-color:#c026d3;}
+.empty{text-align:center;padding:40px 20px;background:var(--surface);
+  border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:13px;}
+.day-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--muted);padding:5px 0 7px;border-bottom:1px solid var(--border);margin-bottom:0;}
+.plan-row{display:grid;grid-template-columns:52px 1fr auto auto;align-items:start;
+  padding:9px 14px 9px 18px;border-bottom:1px solid #0a0618;background:var(--surface);
+  border-left:1px solid var(--border);border-right:1px solid var(--border);gap:8px;
+  position:relative;}
+.plan-row:first-of-type{border-top:1px solid var(--border);}
+.plan-row:last-of-type{border-bottom:1px solid var(--border);border-radius:0 0 8px 8px;}
+.plan-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.plan-row[data-stage="ozora"]::before{background:#c026d3;}
+.plan-row[data-stage="dome"]::before{background:#f59e0b;}
+.plan-row[data-stage="cooking"]::before{background:#10b981;}
+.plan-row[data-stage="dragons"]::before{background:#ef4444;}
+.plan-row[data-stage="pumpui"]::before{background:#a855f7;}
+.ptime{font-size:11px;color:var(--muted);padding-top:2px;}
+.pname{font-size:13px;font-weight:700;}
+.psub{font-size:10px;color:var(--muted);margin-top:2px;}
+.badge{width:38px;height:24px;border-radius:4px;display:flex;align-items:center;
+  justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;}
+.r9{background:#4a0070;color:#e879f9;border:1px solid #c026d3;}
+.r8{background:#4a2800;color:#fcd34d;border:1px solid #f59e0b;}
+.r7{background:#002a18;color:#6ee7b7;border:1px solid #10b981;}
+.rna{background:#141414;color:#444;border:1px solid #222;font-size:9px;}
+.remove-btn{background:none;border:none;color:#2a2050;font-size:14px;cursor:pointer;
+  padding:2px 4px;touch-action:manipulation;font-family:inherit;transition:color 0.15s;}
+.remove-btn:hover{color:#f87171;}
+.stats{background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  padding:10px 14px;margin-bottom:18px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+.stat{text-align:center;}
+.stat-num{font-size:20px;font-weight:800;color:#e879f9;display:block;}
+.stat-lbl{font-size:10px;color:var(--muted);}
+.actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;}
+.action-btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);
+  background:var(--surface);color:var(--muted);cursor:pointer;font-size:12px;font-weight:600;
+  font-family:inherit;touch-action:manipulation;min-height:36px;}
+.action-btn.primary{background:#1a0030;color:#e879f9;border-color:#c026d3;}
+.day-section{margin-bottom:20px;}
+.hidden{display:none!important;}
+
+.stage-chip{display:inline-block;padding:1px 5px;border-radius:3px;font-size:9px;
+  font-weight:700;text-transform:uppercase;letter-spacing:0.3px;}
+.chip-ozora{background:#1a0030;color:#e879f9;border:1px solid #c026d344;}
+.chip-dome{background:#1a0800;color:#fcd34d;border:1px solid #f59e0b44;}
+.chip-cooking{background:#001a0d;color:#6ee7b7;border:1px solid #10b98144;}
+.chip-dragons{background:#1a0000;color:#fca5a5;border:1px solid #ef444444;}
+.chip-pumpui{background:#0d0020;color:#d8b4fe;border:1px solid #a855f744;}
+
+.diary{grid-column:1/-1;margin-top:7px}.diary textarea{width:100%;min-height:58px;background:#080418;border:1px solid #2a2050;border-radius:7px;color:#e8e0f8;padding:8px;font:12px inherit;resize:vertical}.diary-label{font-size:10px;color:#a090d0;margin-bottom:4px}.diary-save{font-size:10px;color:#6ee7b7;margin-top:3px}.plan-row{grid-template-columns:52px 1fr auto auto;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📋 Mein Plan</h1>
+  <p style="color:var(--muted);font-size:12px;margin-top:4px;">Ozora Festival 2026 · Dádpuszta</p>
+</header>
+
+<div class="nav">
+  <a href="ozora.html">← Zeitplan</a>
+  <a href="ozora-meinplan.html" class="active">📋 Mein Plan</a>
+</div>
+
+<div id="stats-bar" class="stats hidden">
+  <div class="stat"><span class="stat-num" id="stat-total">0</span><span class="stat-lbl">Acts</span></div>
+  <div class="stat"><span class="stat-num" id="stat-stages">0</span><span class="stat-lbl">Stages</span></div>
+</div>
+
+<div class="actions" id="action-bar" style="display:none;">
+  <button type="button" class="action-btn primary" id="btn-share">📤 Als Text teilen</button>
+  <button type="button" class="action-btn" id="btn-clear">🗑 Alle löschen</button>
+</div>
+
+<div id="plan-content"></div>
+
+<div id="empty-state" class="empty hidden">
+  <div style="font-size:32px;margin-bottom:12px;">🌿</div>
+  <div>Noch keine Acts im Plan.<br>Im <a href="ozora.html" style="color:#c026d3;text-decoration:none;">Zeitplan</a> auf ☆ tippen um Acts hinzuzufügen.</div>
+</div>
+
+<script>
+(function(){
+var PLAN_KEY = 'ozora2026_plan';
+var STORE_KEY = 'ozora2026_v1';
+var DIARY_KEY = 'ozora2026_diary';
+var myPlan = {};
+var ownRatings = {};
+var diary = {};
+try { myPlan = JSON.parse(localStorage.getItem(PLAN_KEY)||'{}') || {}; } catch(e) {}
+try { ownRatings = JSON.parse(localStorage.getItem(STORE_KEY)||'{}') || {}; } catch(e) {}
+try { diary = JSON.parse(localStorage.getItem(DIARY_KEY)||'{}') || {}; } catch(e) {}
+function saveDiary(){ try { localStorage.setItem(DIARY_KEY, JSON.stringify(diary)); } catch(e) {} }
+function savePlan() { try { localStorage.setItem(PLAN_KEY, JSON.stringify(myPlan)); } catch(e) {} }
+
+var DAY_LABELS = {
+  mon:'Montag, 27. Juli', tue:'Dienstag, 28. Juli', wed:'Mittwoch, 29. Juli',
+  thu:'Donnerstag, 30. Juli', fri:'Freitag, 31. Juli',
+  sat:'Samstag, 1. August', sun:'Sonntag, 2. August'
+};
+var DAY_ORDER = ['mon','tue','wed','thu','fri','sat','sun'];
+var DAY_SHORT = {mon:'Mo 27.7.',tue:'Di 28.7.',wed:'Mi 29.7.',thu:'Do 30.7.',fri:'Fr 31.7.',sat:'Sa 1.8.',sun:'So 2.8.'};
+
+var STAGE_LABELS = {ozora:'Ozora Stage',dome:'The Dome',cooking:'Cooking Groove',dragons:"Dragon's Nest",pumpui:'Pumpui'};
+
+function timeToMin(t) {
+  if (!t) return 9999;
+  var p = t.split(':'), h = parseInt(p[0]), m = parseInt(p[1]||0);
+  if (h < 6) h += 24;
+  return h*60+m;
+}
+
+function badgeCls(v) {
+  if (v===null||v===undefined) return 'rna';
+  return v>=9?'r9':v>=8?'r8':v>=7?'r7':'rna';
+}
+
+function render() {
+  var content = document.getElementById('plan-content');
+  var empty = document.getElementById('empty-state');
+  var statsBar = document.getElementById('stats-bar');
+  var actionBar = document.getElementById('action-bar');
+  var keys = Object.keys(myPlan);
+
+  if (!keys.length) {
+    content.innerHTML = '';
+    empty.classList.remove('hidden');
+    statsBar.classList.add('hidden');
+    actionBar.style.display = 'none';
+    return;
+  }
+
+  empty.classList.add('hidden');
+  statsBar.classList.remove('hidden');
+  actionBar.style.display = '';
+
+  var byDay = {};
+  DAY_ORDER.forEach(function(d){ byDay[d]=[]; });
+  keys.forEach(function(id){ var act=myPlan[id]; if(!act) return; (byDay[act.day]=byDay[act.day]||[]).push({id,act}); });
+  DAY_ORDER.forEach(function(d){ (byDay[d]||[]).sort(function(a,b){return timeToMin(a.act.time)-timeToMin(b.act.time);}); });
+
+  var html = '';
+  var stages = new Set();
+  keys.forEach(function(id){ if(myPlan[id]) stages.add(myPlan[id].stage); });
+
+  DAY_ORDER.forEach(function(d){
+    var acts = byDay[d]||[];
+    if (!acts.length) return;
+    html += '<div class="day-section">';
+    html += '<div class="day-label">' + (DAY_LABELS[d]||d) + '</div>';
+    acts.forEach(function(item){
+      var act=item.act, id=item.id;
+      var or_ = ownRatings[id]!==undefined ? ownRatings[id] : null;
+      var orDisp = or_!==null ? or_ : '–';
+      html += '<div class="plan-row" data-stage="'+(act.stage||'')+'">'+
+        '<div class="ptime">'+(act.time||'')+'</div>'+
+        '<div><div class="pname">'+act.name+'</div>'+
+        '<div class="psub"><span class="stage-chip chip-'+(act.stage||'')+'">'+
+        (STAGE_LABELS[act.stage]||act.stage)+'</span></div></div>'+
+        '<div class="badge '+badgeCls(or_)+'">'+orDisp+'</div>'+
+        '<button type="button" class="remove-btn" data-remove="'+id+'">✕</button>'+
+        '<div class="diary"><div class="diary-label">📓 Festival-Tagebuch</div><textarea data-diary="'+id+'" placeholder="Stimmung, Set, Begegnungen, besondere Momente ...">'+(diary[id]||'')+'</textarea><div class="diary-save" data-saved="'+id+'"></div></div>'+
+        '</div>';
+    });
+    html += '</div>';
+  });
+
+  content.innerHTML = html;
+  document.getElementById('stat-total').textContent = keys.length;
+  document.getElementById('stat-stages').textContent = stages.size;
+
+  content.querySelectorAll('[data-diary]').forEach(function(area){ area.addEventListener('input', function(){ diary[this.dataset.diary]=this.value; saveDiary(); var s=content.querySelector('[data-saved="'+this.dataset.diary+'"]'); if(s){s.textContent='Gespeichert'; setTimeout(function(){s.textContent='';},900);} }); });
+
+  content.querySelectorAll('.remove-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      delete myPlan[this.dataset.remove]; savePlan(); render();
+    });
+  });
+}
+
+document.addEventListener('click', function(e){
+  if (e.target.id==='btn-clear') {
+    if (confirm('Wirklich alle Acts löschen?')) { myPlan={}; savePlan(); render(); }
+  }
+  if (e.target.id==='btn-share') {
+    var lines=['🌿 Mein Ozora 2026 Plan\n'];
+    ['mon','tue','wed','thu','fri','sat','sun'].forEach(function(d){
+      var acts=Object.keys(myPlan).filter(function(id){return myPlan[id].day===d;})
+        .map(function(id){return myPlan[id];}).sort(function(a,b){return timeToMin(a.time)-timeToMin(b.time);});
+      if (!acts.length) return;
+      lines.push({'mon':'Mo 27.7.','tue':'Di 28.7.','wed':'Mi 29.7.','thu':'Do 30.7.',
+        'fri':'Fr 31.7.','sat':'Sa 1.8.','sun':'So 2.8.'}[d]||d);
+      acts.forEach(function(a){ var aid=Object.keys(myPlan).find(function(k){return myPlan[k]===a;}); lines.push('  '+(a.time||'?')+' '+a.name+' ['+({ozora:'Ozora',dome:'Dome',cooking:'CookG',dragons:'DrNest',pumpui:'Pumpui'}[a.stage]||a.stage)+']'+(aid&&diary[aid]?'\n    📓 '+diary[aid].replace(/\n/g,' '):'')); });
+      lines.push('');
+    });
+    var text = lines.join('\n');
+    if (navigator.share) { navigator.share({title:'Mein Ozora 2026 Plan',text:text}); }
+    else if (navigator.clipboard) { navigator.clipboard.writeText(text).then(function(){ alert('Kopiert!'); }); }
+    else alert(text);
+  }
+});
+
+render();
+})();
+</script>
+<script>if('serviceWorker'in navigator)navigator.serviceWorker.register('./service-worker.js').catch(function(){});</script>
+</body>
+</html>
