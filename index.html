@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#130b28">
+  <meta name="description" content="Offline Festival-Planer mit Zeitplan, Empfehlungen und Tagebuch.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="assets/styles.css">
+  <title>Ozora Companion</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-route="home" aria-label="Startseite">
+        <img src="icons/icon.svg" alt=""><span><b>OZORA</b><small>Festival Companion</small></span>
+      </button>
+      <div class="top-actions">
+        <select id="language" aria-label="Sprache"><option value="de">DE</option><option value="en">EN</option><option value="es">ES</option><option value="hu">HU</option></select>
+        <button id="notificationButton" class="icon-button" aria-label="Erinnerungen">🔔</button>
+      </div>
+    </header>
+
+    <main id="app" tabindex="-1"></main>
+
+    <nav class="bottom-nav" aria-label="Hauptnavigation">
+      <button data-route="home"><span>⌂</span><small data-i18n="navHome">Start</small></button>
+      <button data-route="schedule"><span>▦</span><small data-i18n="navSchedule">Zeitplan</small></button>
+      <button data-route="discover"><span>✦</span><small data-i18n="navDiscover">Entdecken</small></button>
+      <button data-route="plan"><span>♥</span><small data-i18n="navPlan">Mein Plan</small><i id="planCount">0</i></button>
+      <button data-route="journal"><span>✎</span><small data-i18n="navJournal">Tagebuch</small></button>
+    </nav>
+  </div>
+
+  <dialog id="artistDialog"><button class="dialog-close" aria-label="Schließen">×</button><div id="artistContent"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
