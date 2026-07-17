@@ -1,0 +1,4 @@
+OZORA 2026 FESTIVAL PLANNER v4.1
+Expected main-stage schedule slots: 303
+Expected visible stage tabs: All, Ozora Stage, The Dome, Cooking Groove, Dragon's Nest, Pumpui, Routing, First Timer
+If this file opens at /Ozora2026_2.0/DEPLOYMENT-CHECK.txt, the complete v4.1 package reached GitHub Pages.
