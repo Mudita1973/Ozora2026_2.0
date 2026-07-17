@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#06020f">
+  <meta name="description" content="Inoffizieller mehrsprachiger Offline-Festivalplaner für Ozora 2026">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Ozora 2026">
+  <link rel="manifest" href="manifest.json?v=440">
+  <link rel="icon" href="icon.svg?v=440" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-192.png?v=440">
+  <link rel="stylesheet" href="styles.css?v=440">
+  <title>Ozora 2026 Planner</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-route="home" aria-label="Start"><img src="icon.svg?v=440" alt=""><span><b>OZORA 2026</b><small>Festival Planner · v4.4</small></span></button>
+      <div class="top-actions">
+        <select id="language" aria-label="Sprache"><option value="de">🇩🇪 DE</option><option value="en">🇬🇧 EN</option><option value="es">🇪🇸 ES</option><option value="hu">🇭🇺 HU</option></select>
+        <button id="reminderButton" class="icon-button" title="Erinnerungen">🔔</button>
+        <button id="compactButton" class="icon-button" title="Kompaktmodus">⚡</button>
+        <button id="infoButton" class="icon-button" title="Anleitung">ℹ️</button>
+        <button id="cacheButton" class="icon-button" title="Cache leeren">↻</button>
+      </div>
+    </header>
+
+    <nav id="featureTabs" class="feature-tabs" aria-label="Bereiche"></nav>
+    <main id="app" tabindex="-1"></main>
+
+    <footer>
+      <p data-i18n="disclaimer">Inoffizielle Fan-App. Nicht mit O.Z.O.R.A. Festival verbunden.</p>
+      <div class="footer-actions">
+        <a id="kofiLink" href="https://ko-fi.com/" target="_blank" rel="noopener" data-i18n="supportApp">☕ App unterstützen (Ko-fi)</a>
+        <button id="qrButton" data-i18n="shareApp">▦ App per QR teilen</button>
+      </div>
+    </footer>
+
+    <nav class="bottom-nav" aria-label="Hauptnavigation">
+      <button data-route="home"><span>⌂</span><small data-i18n="home">Start</small></button>
+      <button data-route="schedule"><span>▦</span><small data-i18n="all">Alle</small></button>
+      <button data-route="discover"><span>✦</span><small data-i18n="discover">Entdecken</small></button>
+      <button data-route="plan"><span>☆</span><small data-i18n="myPlan">Mein Plan</small><i id="planCount">0</i></button>
+      <button data-route="journal"><span>✎</span><small data-i18n="journal">Notizen</small></button>
+    </nav>
+  </div>
+
+  <dialog id="artistDialog" class="modal"><button class="dialog-close" aria-label="Schließen">×</button><div id="artistContent"></div></dialog>
+  <dialog id="infoDialog" class="modal wide"><button class="dialog-close" aria-label="Schließen">×</button><div id="infoContent"></div></dialog>
+  <dialog id="introDialog" class="modal intro-modal"><img src="icon.svg?v=440" alt=""><h1>OZORA 2026</h1><p data-i18n="chooseLanguage">Wähle deine Sprache</p><div class="intro-langs"><button data-lang="de">🇩🇪 Deutsch</button><button data-lang="en">🇬🇧 English</button><button data-lang="es">🇪🇸 Español</button><button data-lang="hu">🇭🇺 Magyar</button></div><button id="introContinue" class="primary" data-i18n="continue">Weiter</button></dialog>
+  <dialog id="qrDialog" class="modal qr-modal"><button class="dialog-close" aria-label="Schließen">×</button><div id="qrContent"></div></dialog>
+  <dialog id="reminderDialog" class="modal"><button class="dialog-close" aria-label="Schließen">×</button><div id="reminderContent"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="vendor/jszip.min.js?v=440" defer></script>
+  <script src="schedule-data.js?v=440" defer></script>
+  <script src="xlsx-import.js?v=440" defer></script>
+  <script src="app.js?v=440" defer></script>
+</body>
+</html>

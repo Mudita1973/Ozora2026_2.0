@@ -1,0 +1,57 @@
+# Ozora 2026 Festival Planner v4.4
+
+This folder is ready for direct publication with GitHub Pages.
+
+## Publish
+
+1. Upload **the contents of this folder** to the root of the GitHub repository. Do not upload the outer folder itself.
+2. Confirm that `index.html`, `app.js`, `styles.css`, `schedule-data.js`, `manifest.json` and `service-worker.js` are visible at repository root.
+3. In GitHub open **Settings → Pages**.
+4. Choose **Deploy from a branch**, branch **main**, folder **/(root)** and save.
+5. Open `https://mudita1973.github.io/Ozora2026_2.0/` after deployment finishes.
+
+The `.nojekyll` file is intentional and must stay in the repository.
+
+After publishing, verify these two addresses:
+
+- `https://mudita1973.github.io/Ozora2026_2.0/DEPLOYMENT-CHECK.txt`
+- `https://mudita1973.github.io/Ozora2026_2.0/?v=440`
+
+If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=440` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v4.4** in the header and **All (303)** in the first tab.
+
+## New in v4.2
+
+- **Discover:** a fresh mix of twelve acts not yet saved or rated, with genre selection and a New Mix button.
+- **Recommendations:** ranked from saved acts and personal ratings, with genre and stage reasons; curated highlights are used until preferences exist.
+- **Genre filter:** All genres, Ambient / Dub, Psytrance, Techno and World / Live in the schedule and Discover view.
+- **Local reminders:** optional browser notifications 5, 10, 15 or 30 minutes before saved acts. They are checked while the app is open or active in the background; fully closed delivery is not guaranteed without a push server.
+
+## New in v4.3
+
+- A clearly visible **Share app by QR** panel on the home screen and in the footer.
+- The QR dialog contains the direct app address plus copy-link and native share actions.
+- Ko-fi is described only as an optional donation for people who enjoy the app.
+- QR sharing and the purpose of Ko-fi are explained in all four guide translations.
+
+## New in v4.4
+
+- Local `.xlsx` import for ratings, comments, YouTube/Spotify links and My Plan selections; files never leave the device.
+- Direct support for both the normalized Ozora template and Johannes' existing multi-sheet workbook, including mixed rating formats such as `6.5-8.0`, `4.0/6.4` and single scores.
+- A downloadable, pre-filled `Ozora-2026-Import-Template.xlsx` with all 303 schedule slots, stable IDs and validated 0–10 fields.
+- A dedicated Indian Spirit view containing the 15 confident Ozora overlaps from Johannes' `Overlap 2026` sheet, with IS tags on their schedule cards.
+- JSZip is bundled locally under its included license; no CDN or external import service is used.
+
+See `FEATURE-AUDIT.md` for the completed checklist and the remaining source-data differences.
+
+## Content audit notes
+
+- The supplied posters yield 303 schedule slots across the five requested main stages after Cooking Groove and Dragon's Nest are separated by their published hours. A 304th main-stage act is not present in the supplied source material, so none was invented.
+- Pumpui Day -1 (25 July) and Day 0 (26 July) are included.
+- The supplied Visium/Ambyss poster starts on 28 July. The Ambyss/Y2KZERO line-up for 25–26 July was not supplied; the app shows this honestly in the First Timer tab.
+- The First Timer choices are a configurable starter selection and credit Astro S / PsySmurfs. Replace them in `FIRST` inside `app.js` when the exact external recommendation list is available.
+- `KOFI_URL` in `app.js` currently points to the Ko-fi homepage because no creator handle was supplied. Replace it with the intended Ko-fi page.
+- The Indian Spirit list now follows Johannes' confident `Overlap 2026` comparison. `GMS` is represented by the scheduled Ozora act `GMS & Dickster`.
+
+## Storage and privacy
+
+The app uses browser `localStorage` for language, compact mode, plan, ratings/comments, imported links and reminder preferences. Excel files are parsed locally and are not uploaded. It has no login, tracker or external data API. YouTube, Spotify and Ko-fi open only when their links are tapped.
