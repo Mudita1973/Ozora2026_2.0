@@ -1,11 +1,11 @@
-# Ozora 2026 Festival Planner v4.4
+# Ozora 2026 Festival Planner v4.9
 
 This folder is ready for direct publication with GitHub Pages.
 
 ## Publish
 
 1. Upload **the contents of this folder** to the root of the GitHub repository. Do not upload the outer folder itself.
-2. Confirm that `index.html`, `app.js`, `styles.css`, `schedule-data.js`, `manifest.json` and `service-worker.js` are visible at repository root.
+2. Confirm that `index.html`, `app.js`, `styles.css`, `schedule-data.js`, `jszip.min.js`, `manifest.json` and `service-worker.js` are visible at repository root.
 3. In GitHub open **Settings → Pages**.
 4. Choose **Deploy from a branch**, branch **main**, folder **/(root)** and save.
 5. Open `https://mudita1973.github.io/Ozora2026_2.0/` after deployment finishes.
@@ -15,9 +15,9 @@ The `.nojekyll` file is intentional and must stay in the repository.
 After publishing, verify these two addresses:
 
 - `https://mudita1973.github.io/Ozora2026_2.0/DEPLOYMENT-CHECK.txt`
-- `https://mudita1973.github.io/Ozora2026_2.0/?v=440`
+- `https://mudita1973.github.io/Ozora2026_2.0/?v=490`
 
-If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=440` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v4.4** in the header and **All (303)** in the first tab.
+If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=490` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v4.9** in the header and **All (303)** in the first tab.
 
 ## New in v4.2
 
@@ -36,10 +36,18 @@ If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2
 ## New in v4.4
 
 - Local `.xlsx` import for ratings, comments, YouTube/Spotify links and My Plan selections; files never leave the device.
-- Direct support for both the normalized Ozora template and Johannes' existing multi-sheet workbook, including mixed rating formats such as `6.5-8.0`, `4.0/6.4` and single scores.
+- Direct support for the normalized Ozora template and compatible multi-sheet workbooks, including mixed rating formats such as `6.5-8.0`, `4.0/6.4` and single scores.
 - A downloadable, pre-filled `Ozora-2026-Import-Template.xlsx` with all 303 schedule slots, stable IDs and validated 0–10 fields.
-- A dedicated Indian Spirit view containing the 15 confident Ozora overlaps from Johannes' `Overlap 2026` sheet, with IS tags on their schedule cards.
+- A dedicated Indian Spirit view containing 15 confirmed Ozora overlaps, with IS tags on their schedule cards.
 - JSZip is bundled locally under its included license; no CDN or external import service is used.
+
+## New in v4.9
+
+- **Artist profiles** now include a complete 0–10 rating selector for every listed performance. The value is shared with the schedule, recommendations, plan and journal and remains saved locally after reloading.
+- **Mein Plan** is now the second top navigation tab from every view, in addition to the fixed bottom navigation.
+- **Ratings** have a clearly labelled `0–10` button and one-tap choices for 5, 6, 7, 8, 9 or 10; the precise min/max range remains available underneath.
+- Rating controls use persistent delegated touch/click handling, update the card immediately and remain saved after reloading the app.
+- `jszip.min.js` is now at repository root and included in the new offline cache. This fixes the `JSZip missing` error when the full v4.9 upload package replaces the older files.
 
 See `FEATURE-AUDIT.md` for the completed checklist and the remaining source-data differences.
 
@@ -50,7 +58,7 @@ See `FEATURE-AUDIT.md` for the completed checklist and the remaining source-data
 - The supplied Visium/Ambyss poster starts on 28 July. The Ambyss/Y2KZERO line-up for 25–26 July was not supplied; the app shows this honestly in the First Timer tab.
 - The First Timer choices are a configurable starter selection and credit Astro S / PsySmurfs. Replace them in `FIRST` inside `app.js` when the exact external recommendation list is available.
 - `KOFI_URL` in `app.js` currently points to the Ko-fi homepage because no creator handle was supplied. Replace it with the intended Ko-fi page.
-- The Indian Spirit list now follows Johannes' confident `Overlap 2026` comparison. `GMS` is represented by the scheduled Ozora act `GMS & Dickster`.
+- The Indian Spirit list follows a confirmed festival comparison. `GMS` is represented by the scheduled Ozora act `GMS & Dickster`.
 
 ## Storage and privacy
 

@@ -1,0 +1,74 @@
+.profile-rating-hint {
+  margin: -6px 0 12px;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.4;
+}
+
+.profile-occurrences {
+  display: grid;
+  gap: 10px;
+}
+
+.profile-occurrence {
+  padding: 12px;
+  border: 1px solid #ffffff18;
+  border-radius: 15px;
+  background: var(--surface2);
+}
+
+.profile-occurrence-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.profile-occurrence-head small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: .75rem;
+}
+
+.profile-rating-label {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 5px 9px;
+  background: #ffffff18;
+  color: var(--gold);
+  font-size: .72rem;
+  font-weight: 900;
+}
+
+.profile-score-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+  margin-top: 11px;
+}
+
+.profile-score-grid button {
+  min-height: 38px;
+  border: 1px solid #ffffff25;
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 900;
+}
+
+.profile-score-grid button.selected {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.profile-links {
+  margin-bottom: 18px;
+}
+
+@media (max-width: 420px) {
+  .profile-score-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

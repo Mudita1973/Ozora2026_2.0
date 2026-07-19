@@ -7,7 +7,7 @@
 - Pumpui Pre-Days on 25 and 26 July.
 - Personal 0–10 min/max rating range and an English comment field, stored locally.
 - YouTube and Spotify search links on every act, artist profile dialog and all five original posters.
-- IS tags and a dedicated view for the 15 confident Ozora + Indian Spirit overlaps in Johannes' workbook.
+- IS tags and a dedicated view for 15 confirmed Ozora + Indian Spirit overlaps.
 - Dragon's Nest fire shows and the Monday 20:00 Opening Ceremony.
 - Festival timeline from arrival to the end of the festival.
 - Tabs for all acts, every main stage, Routing and First Timer.
@@ -29,9 +29,9 @@
 - Optional local reminders 5, 10, 15 or 30 minutes before saved acts, with browser permission handling and notification links back to My Plan.
 - Prominent QR sharing on the home screen and footer, with direct-link display, copy-link and native sharing controls.
 - Ko-fi clearly identified as a voluntary donation option, with QR sharing and donation wording included in all four guide translations.
-- Local Excel import for the normalized Ozora template and Johannes' multi-sheet workbook, covering rating ranges, comments, YouTube/Spotify links and My Plan selections.
+- Local Excel import for the normalized Ozora template and compatible multi-sheet workbooks, covering rating ranges, comments, YouTube/Spotify links and My Plan selections.
 - A professional, pre-filled import workbook with 303 act rows, stable IDs, input validation, filters, frozen panes, instructions and source notes.
-- Dedicated Indian Spirit tab with 15 artists sourced from Johannes' confident `Overlap 2026` list; `GMS` maps to the scheduled `GMS & Dickster` act.
+- Dedicated Indian Spirit tab with 15 confirmed artists; `GMS` maps to the scheduled `GMS & Dickster` act.
 
 ## Source-data differences that remain visible and documented
 

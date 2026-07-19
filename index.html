@@ -8,16 +8,17 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Ozora 2026">
-  <link rel="manifest" href="manifest.json?v=440">
-  <link rel="icon" href="icon.svg?v=440" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon-192.png?v=440">
-  <link rel="stylesheet" href="styles.css?v=440">
+  <link rel="manifest" href="manifest.json?v=490">
+  <link rel="icon" href="icon.svg?v=490" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-192.png?v=490">
+  <link rel="stylesheet" href="styles.css?v=490">
+  <link rel="stylesheet" href="artist-profile.css?v=490">
   <title>Ozora 2026 Planner</title>
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <button class="brand" data-route="home" aria-label="Start"><img src="icon.svg?v=440" alt=""><span><b>OZORA 2026</b><small>Festival Planner · v4.4</small></span></button>
+      <button class="brand" data-route="home" aria-label="Start"><img src="icon.svg?v=490" alt=""><span><b>OZORA 2026</b><small>Festival Planner · v4.9</small></span></button>
       <div class="top-actions">
         <select id="language" aria-label="Sprache"><option value="de">🇩🇪 DE</option><option value="en">🇬🇧 EN</option><option value="es">🇪🇸 ES</option><option value="hu">🇭🇺 HU</option></select>
         <button id="reminderButton" class="icon-button" title="Erinnerungen">🔔</button>
@@ -49,14 +50,14 @@
 
   <dialog id="artistDialog" class="modal"><button class="dialog-close" aria-label="Schließen">×</button><div id="artistContent"></div></dialog>
   <dialog id="infoDialog" class="modal wide"><button class="dialog-close" aria-label="Schließen">×</button><div id="infoContent"></div></dialog>
-  <dialog id="introDialog" class="modal intro-modal"><img src="icon.svg?v=440" alt=""><h1>OZORA 2026</h1><p data-i18n="chooseLanguage">Wähle deine Sprache</p><div class="intro-langs"><button data-lang="de">🇩🇪 Deutsch</button><button data-lang="en">🇬🇧 English</button><button data-lang="es">🇪🇸 Español</button><button data-lang="hu">🇭🇺 Magyar</button></div><button id="introContinue" class="primary" data-i18n="continue">Weiter</button></dialog>
+  <dialog id="introDialog" class="modal intro-modal"><img src="icon.svg?v=490" alt=""><h1>OZORA 2026</h1><p data-i18n="chooseLanguage">Wähle deine Sprache</p><div class="intro-langs"><button data-lang="de">🇩🇪 Deutsch</button><button data-lang="en">🇬🇧 English</button><button data-lang="es">🇪🇸 Español</button><button data-lang="hu">🇭🇺 Magyar</button></div><button id="introContinue" class="primary" data-i18n="continue">Weiter</button></dialog>
   <dialog id="qrDialog" class="modal qr-modal"><button class="dialog-close" aria-label="Schließen">×</button><div id="qrContent"></div></dialog>
   <dialog id="reminderDialog" class="modal"><button class="dialog-close" aria-label="Schließen">×</button><div id="reminderContent"></div></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
 
-  <script src="vendor/jszip.min.js?v=440" defer></script>
-  <script src="schedule-data.js?v=440" defer></script>
-  <script src="xlsx-import.js?v=440" defer></script>
-  <script src="app.js?v=440" defer></script>
+  <script src="jszip.min.js?v=490" defer></script>
+  <script src="schedule-data.js?v=490" defer></script>
+  <script src="xlsx-import.js?v=490" defer></script>
+  <script src="app.js?v=490" defer></script>
 </body>
 </html>
