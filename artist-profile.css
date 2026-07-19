@@ -83,3 +83,30 @@
     grid-template-columns: 1fr;
   }
 }
+
+.imported-tag {
+  border: 1px solid #62d7c855;
+  background: #62d7c81c;
+  color: #86efe1;
+  font-weight: 900;
+}
+
+.imported-quick {
+  background: linear-gradient(135deg, #194b49, #29204d);
+}
+
+.imported-count {
+  display: grid;
+  place-items: center;
+  min-width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #62d7c822;
+  color: #86efe1;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.imported-item {
+  border-color: #62d7c844;
+}

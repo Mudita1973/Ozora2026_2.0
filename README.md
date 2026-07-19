@@ -1,4 +1,4 @@
-# Ozora 2026 Festival Planner v5.0
+# Ozora 2026 Festival Planner v5.1
 
 This folder is ready for direct publication with GitHub Pages.
 
@@ -15,9 +15,9 @@ The `.nojekyll` file is intentional and must stay in the repository.
 After publishing, verify these two addresses:
 
 - `https://mudita1973.github.io/Ozora2026_2.0/DEPLOYMENT-CHECK.txt`
-- `https://mudita1973.github.io/Ozora2026_2.0/?v=500`
+- `https://mudita1973.github.io/Ozora2026_2.0/?v=510`
 
-If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=500` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v5.0** in the header and **All (303)** in the first tab.
+If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=510` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v5.1** in the header and **All (303)** in the first tab.
 
 ## New in v4.2
 
@@ -30,8 +30,7 @@ If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2
 
 - A clearly visible **Share app by QR** panel on the home screen and in the footer.
 - The QR dialog contains the direct app address plus copy-link and native share actions.
-- Ko-fi is described only as an optional donation for people who enjoy the app.
-- QR sharing and the purpose of Ko-fi are explained in all four guide translations.
+- QR sharing is explained in all four guide translations.
 
 ## New in v4.4
 
@@ -41,8 +40,10 @@ If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2
 - A dedicated Indian Spirit view containing 15 confirmed Ozora overlaps, with IS tags on their schedule cards.
 - JSZip is bundled locally under its included license; no CDN or external import service is used.
 
-## New in v5.0
+## New in v5.1
 
+- **Imported recommendations:** every act whose personal data was imported from Excel appears in a dedicated view, carries a neutral IMPORTED badge and is sorted by rating. After a successful import, the app opens this view automatically.
+- All donation links and related guide text have been removed. App sharing remains available through the QR button.
 - **Excel import repaired and expanded:** the app now recognizes standard import sheets even when the header is not in the first row, accepts common English and German header variants, and can recover ratings and links from `Original Rating` / `Original Links` columns.
 - The import preview now separates recognized Excel rows, acts with actual importable personal data, and unmatched artists. A blank template therefore produces an explicit explanation instead of the misleading `0 / 0` result.
 - Parser and offline-cache versions were advanced together so an older cached importer cannot silently remain active after deployment.
@@ -50,7 +51,7 @@ If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2
 - **Mein Plan** is now the second top navigation tab from every view, in addition to the fixed bottom navigation.
 - **Ratings** have a clearly labelled `0–10` button and one-tap choices for 5, 6, 7, 8, 9 or 10; the precise min/max range remains available underneath.
 - Rating controls use persistent delegated touch/click handling, update the card immediately and remain saved after reloading the app.
-- `jszip.min.js` is now at repository root and included in the new offline cache. This fixes the `JSZip missing` error when the full v5.0 upload package replaces the older files.
+- `jszip.min.js` is now at repository root and included in the new offline cache. This fixes the `JSZip missing` error when the full v5.1 upload package replaces the older files.
 
 See `FEATURE-AUDIT.md` for the completed checklist and the remaining source-data differences.
 
@@ -60,9 +61,8 @@ See `FEATURE-AUDIT.md` for the completed checklist and the remaining source-data
 - Pumpui Day -1 (25 July) and Day 0 (26 July) are included.
 - The supplied Visium/Ambyss poster starts on 28 July. The Ambyss/Y2KZERO line-up for 25–26 July was not supplied; the app shows this honestly in the First Timer tab.
 - The First Timer choices are a configurable starter selection and credit Astro S / PsySmurfs. Replace them in `FIRST` inside `app.js` when the exact external recommendation list is available.
-- `KOFI_URL` in `app.js` currently points to the Ko-fi homepage because no creator handle was supplied. Replace it with the intended Ko-fi page.
 - The Indian Spirit list follows a confirmed festival comparison. `GMS` is represented by the scheduled Ozora act `GMS & Dickster`.
 
 ## Storage and privacy
 
-The app uses browser `localStorage` for language, compact mode, plan, ratings/comments, imported links and reminder preferences. Excel files are parsed locally and are not uploaded. It has no login, tracker or external data API. YouTube, Spotify and Ko-fi open only when their links are tapped.
+The app uses browser `localStorage` for language, compact mode, plan, ratings/comments, imported links and reminder preferences. Excel files are parsed locally and are not uploaded. It has no login, tracker or external data API. YouTube and Spotify open only when their links are tapped.

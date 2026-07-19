@@ -1,25 +1,25 @@
-const CACHE_NAME = 'ozora-2026-v5.0.0';
+const CACHE_NAME = 'ozora-2026-v5.1.0';
 const CORE = [
   './',
   './index.html',
-  './styles.css?v=500',
-  './artist-profile.css?v=500',
-  './jszip.min.js?v=500',
-  './schedule-data.js?v=500',
-  './xlsx-import.js?v=500',
-  './app.js?v=500',
-  './manifest.json?v=500',
-  './icon.svg?v=500',
-  './icon-192.png?v=500',
-  './icon-512.png?v=500',
-  './qr-code.png?v=500',
-  './Ozora-2026-Import-Template.xlsx?v=500',
-  './stage-ozora.jpg?v=500',
-  './stage-dome.jpg?v=500',
-  './stage-pumpui.jpg?v=500',
-  './stage-dragon-cooking.jpg?v=500',
-  './stage-visium.jpg?v=500',
-  './cache-reset.html?v=500'
+  './styles.css?v=510',
+  './artist-profile.css?v=510',
+  './jszip.min.js?v=510',
+  './schedule-data.js?v=510',
+  './xlsx-import.js?v=510',
+  './app.js?v=510',
+  './manifest.json?v=510',
+  './icon.svg?v=510',
+  './icon-192.png?v=510',
+  './icon-512.png?v=510',
+  './qr-code.png?v=510',
+  './Ozora-2026-Import-Template.xlsx?v=510',
+  './stage-ozora.jpg?v=510',
+  './stage-dome.jpg?v=510',
+  './stage-pumpui.jpg?v=510',
+  './stage-dragon-cooking.jpg?v=510',
+  './stage-visium.jpg?v=510',
+  './cache-reset.html?v=510'
 ];
 
 self.addEventListener('install', event => {

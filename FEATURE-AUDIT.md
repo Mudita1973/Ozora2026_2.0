@@ -1,4 +1,4 @@
-# Feature audit — Ozora 2026 Planner v4.4
+# Feature audit — Ozora 2026 Planner v5.1
 
 ## Implemented
 
@@ -20,7 +20,7 @@
 - Complete navigation and guide UI in German, English, Spanish and Hungarian.
 - First-launch language selection followed by a nine-part guide; the guide remains available through the info button.
 - Installable offline PWA with 192px and 512px icons, service worker, local storage and no login, tracker or external data API.
-- Ko-fi button, direct-access QR code and persistent unofficial disclaimer.
+- Direct-access QR code and persistent unofficial disclaimer.
 - Visible act counts in all stage tabs, six direct feature cards on the home screen and a full-filter reset through the All tab.
 - Dedicated `cache-reset.html` page for removing stale GitHub Pages service workers and caches.
 - Dedicated Discover screen with genre selection and repeatable twelve-act surprise mixes that exclude already saved or rated acts.
@@ -28,8 +28,9 @@
 - Genre filters in both the schedule and Discover views.
 - Optional local reminders 5, 10, 15 or 30 minutes before saved acts, with browser permission handling and notification links back to My Plan.
 - Prominent QR sharing on the home screen and footer, with direct-link display, copy-link and native sharing controls.
-- Ko-fi clearly identified as a voluntary donation option, with QR sharing and donation wording included in all four guide translations.
+- QR sharing included in all four guide translations.
 - Local Excel import for the normalized Ozora template and compatible multi-sheet workbooks, covering rating ranges, comments, YouTube/Spotify links and My Plan selections.
+- Dedicated imported-recommendations view with neutral IMPORTED badges, rating order and automatic navigation after a successful import.
 - A professional, pre-filled import workbook with 303 act rows, stable IDs, input validation, filters, frozen panes, instructions and source notes.
 - Dedicated Indian Spirit tab with 15 confirmed artists; `GMS` maps to the scheduled `GMS & Dickster` act.
 
@@ -38,7 +39,6 @@
 1. **303 instead of 304 main-stage slots.** The supplied posters contain 303 transcribed schedule slots across the five requested stages. No unsupported 304th act was invented.
 2. **Ambyss/Y2KZERO on 25–26 July.** The supplied Visium/Ambyss poster begins on 28 July. The missing pre-day source is called out in the First Timer tab.
 3. **Exact external First Timer selection.** Astro S / PsySmurfs are credited, but the exact external recommendation list was not supplied. The app contains a clearly configurable starter selection.
-4. **Ko-fi destination.** The button exists, but it points to the Ko-fi homepage until the creator's exact Ko-fi handle is provided.
 
 ## Verification completed
 
