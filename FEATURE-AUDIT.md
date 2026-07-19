@@ -1,4 +1,4 @@
-# Feature audit — Ozora 2026 Planner v5.1
+# Feature audit — Ozora 2026 Planner v5.2
 
 ## Implemented
 
@@ -31,6 +31,7 @@
 - QR sharing included in all four guide translations.
 - Local Excel import for the normalized Ozora template and compatible multi-sheet workbooks, covering rating ranges, comments, YouTube/Spotify links and My Plan selections.
 - Dedicated imported-recommendations view with neutral IMPORTED badges, rating order and automatic navigation after a successful import.
+- Local JSON backup and restore for My Plan, ratings, comments, imported links, language, compact mode and reminder settings, with validation and a confirmation preview.
 - A professional, pre-filled import workbook with 303 act rows, stable IDs, input validation, filters, frozen panes, instructions and source notes.
 - Dedicated Indian Spirit tab with 15 confirmed artists; `GMS` maps to the scheduled `GMS & Dickster` act.
 

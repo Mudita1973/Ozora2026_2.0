@@ -1,4 +1,4 @@
-# Ozora 2026 Festival Planner v5.1
+# Ozora 2026 Festival Planner v5.2
 
 This folder is ready for direct publication with GitHub Pages.
 
@@ -15,9 +15,9 @@ The `.nojekyll` file is intentional and must stay in the repository.
 After publishing, verify these two addresses:
 
 - `https://mudita1973.github.io/Ozora2026_2.0/DEPLOYMENT-CHECK.txt`
-- `https://mudita1973.github.io/Ozora2026_2.0/?v=510`
+- `https://mudita1973.github.io/Ozora2026_2.0/?v=520`
 
-If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=510` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v5.1** in the header and **All (303)** in the first tab.
+If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=520` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v5.2** in the header and **All (303)** in the first tab.
 
 ## New in v4.2
 
@@ -53,6 +53,14 @@ If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2
 - Rating controls use persistent delegated touch/click handling, update the card immediately and remain saved after reloading the app.
 - `jszip.min.js` is now at repository root and included in the new offline cache. This fixes the `JSZip missing` error when the full v5.1 upload package replaces the older files.
 
+## New in v5.2
+
+- **Portable backup:** download My Plan, ratings, comments, imported links, language, compact mode and reminder settings as a local JSON file.
+- **Restore on another device:** the backup is validated and previewed before it replaces existing local data.
+- Invalid files, unknown act IDs and unsafe external links are rejected or removed during import.
+- Browser notification permission is intentionally not transferred and must be granted again on the new device.
+- Backup and restore are fully translated in German, English, Spanish and Hungarian and remain completely local without upload or account.
+
 See `FEATURE-AUDIT.md` for the completed checklist and the remaining source-data differences.
 
 ## Content audit notes
@@ -65,4 +73,4 @@ See `FEATURE-AUDIT.md` for the completed checklist and the remaining source-data
 
 ## Storage and privacy
 
-The app uses browser `localStorage` for language, compact mode, plan, ratings/comments, imported links and reminder preferences. Excel files are parsed locally and are not uploaded. It has no login, tracker or external data API. YouTube and Spotify open only when their links are tapped.
+The app uses browser `localStorage` for language, compact mode, plan, ratings/comments, imported links and reminder preferences. Excel files and JSON backups are processed locally and are not uploaded. It has no login, tracker or external data API. YouTube and Spotify open only when their links are tapped.
