@@ -1,4 +1,4 @@
-# Ozora 2026 Festival Planner v4.9
+# Ozora 2026 Festival Planner v5.0
 
 This folder is ready for direct publication with GitHub Pages.
 
@@ -15,9 +15,9 @@ The `.nojekyll` file is intentional and must stay in the repository.
 After publishing, verify these two addresses:
 
 - `https://mudita1973.github.io/Ozora2026_2.0/DEPLOYMENT-CHECK.txt`
-- `https://mudita1973.github.io/Ozora2026_2.0/?v=490`
+- `https://mudita1973.github.io/Ozora2026_2.0/?v=500`
 
-If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=490` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v4.9** in the header and **All (303)** in the first tab.
+If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=500` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v5.0** in the header and **All (303)** in the first tab.
 
 ## New in v4.2
 
@@ -41,13 +41,16 @@ If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2
 - A dedicated Indian Spirit view containing 15 confirmed Ozora overlaps, with IS tags on their schedule cards.
 - JSZip is bundled locally under its included license; no CDN or external import service is used.
 
-## New in v4.9
+## New in v5.0
 
+- **Excel import repaired and expanded:** the app now recognizes standard import sheets even when the header is not in the first row, accepts common English and German header variants, and can recover ratings and links from `Original Rating` / `Original Links` columns.
+- The import preview now separates recognized Excel rows, acts with actual importable personal data, and unmatched artists. A blank template therefore produces an explicit explanation instead of the misleading `0 / 0` result.
+- Parser and offline-cache versions were advanced together so an older cached importer cannot silently remain active after deployment.
 - **Artist profiles** now include a complete 0–10 rating selector for every listed performance. The value is shared with the schedule, recommendations, plan and journal and remains saved locally after reloading.
 - **Mein Plan** is now the second top navigation tab from every view, in addition to the fixed bottom navigation.
 - **Ratings** have a clearly labelled `0–10` button and one-tap choices for 5, 6, 7, 8, 9 or 10; the precise min/max range remains available underneath.
 - Rating controls use persistent delegated touch/click handling, update the card immediately and remain saved after reloading the app.
-- `jszip.min.js` is now at repository root and included in the new offline cache. This fixes the `JSZip missing` error when the full v4.9 upload package replaces the older files.
+- `jszip.min.js` is now at repository root and included in the new offline cache. This fixes the `JSZip missing` error when the full v5.0 upload package replaces the older files.
 
 See `FEATURE-AUDIT.md` for the completed checklist and the remaining source-data differences.
 

@@ -72,3 +72,14 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* Import preview: recognized, importable and unmatched rows. */
+.import-stats {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 620px) {
+  .import-stats {
+    grid-template-columns: 1fr;
+  }
+}
