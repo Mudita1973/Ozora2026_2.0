@@ -1,4 +1,4 @@
-# Ozora 2026 Festival Planner v5.2
+# Ozora 2026 Festival Planner v5.3
 
 This folder is ready for direct publication with GitHub Pages.
 
@@ -15,9 +15,9 @@ The `.nojekyll` file is intentional and must stay in the repository.
 After publishing, verify these two addresses:
 
 - `https://mudita1973.github.io/Ozora2026_2.0/DEPLOYMENT-CHECK.txt`
-- `https://mudita1973.github.io/Ozora2026_2.0/?v=520`
+- `https://mudita1973.github.io/Ozora2026_2.0/?v=530`
 
-If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=520` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v5.2** in the header and **All (303)** in the first tab.
+If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=530` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v5.3** in the header and **All (303)** in the first tab.
 
 ## New in v4.2
 
@@ -60,6 +60,13 @@ If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2
 - Invalid files, unknown act IDs and unsafe external links are rejected or removed during import.
 - Browser notification permission is intentionally not transferred and must be granted again on the new device.
 - Backup and restore are fully translated in German, English, Spanish and Hungarian and remain completely local without upload or account.
+
+## New in v5.3
+
+- The export card shows the exact number of plan entries and ratings before a backup is downloaded.
+- Backup export rereads the latest persisted browser data immediately before creating the file.
+- Every backup filename now includes date, time, plan count and rating count, avoiding confusion between multiple same-day iPhone downloads.
+- Empty backups display a prominent warning during import, while the restore button appears before the longer notification note.
 
 See `FEATURE-AUDIT.md` for the completed checklist and the remaining source-data differences.
 

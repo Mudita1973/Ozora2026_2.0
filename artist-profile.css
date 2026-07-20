@@ -182,6 +182,49 @@
   font-size: 1.25rem;
 }
 
+.backup-current {
+  grid-column: 1 / -1;
+  padding: 13px;
+  border: 1px solid #62d7c844;
+  border-radius: 15px;
+  background: #62d7c812;
+}
+
+.backup-current > b,
+.backup-current small {
+  display: block;
+}
+
+.backup-current > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 9px 0;
+}
+
+.backup-current span {
+  display: flex;
+  flex-direction: column;
+  padding: 9px;
+  border-radius: 11px;
+  background: var(--surface2);
+  color: var(--muted);
+}
+
+.backup-current strong {
+  color: var(--text);
+  font-size: 1.3rem;
+}
+
+.backup-current small {
+  color: var(--muted);
+}
+
+.backup-restore {
+  width: 100%;
+  margin-bottom: 4px;
+}
+
 @media (max-width: 620px) {
   .backup-grid,
   .backup-stats {
