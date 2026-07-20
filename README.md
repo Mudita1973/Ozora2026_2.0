@@ -1,4 +1,4 @@
-# Ozora 2026 Festival Planner v5.4
+# Ozora 2026 Festival Planner v5.5
 
 This folder is ready for direct publication with GitHub Pages.
 
@@ -15,9 +15,9 @@ The `.nojekyll` file is intentional and must stay in the repository.
 After publishing, verify these two addresses:
 
 - `https://mudita1973.github.io/Ozora2026_2.0/DEPLOYMENT-CHECK.txt`
-- `https://mudita1973.github.io/Ozora2026_2.0/?v=540`
+- `https://mudita1973.github.io/Ozora2026_2.0/?v=550`
 
-If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=540` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v5.4** in the header and **All (303)** in the first tab.
+If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=550` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v5.5** in the header and **All (303)** in the first tab.
 
 ## New in v4.2
 
@@ -74,6 +74,13 @@ If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2
 - `LIVE` is shown strictly between an act's actual start and end time.
 - The four home statistics are now real navigation buttons: Acts opens the complete editable schedule, Stages opens a new five-stage overview, Saved opens My Plan and Ratings opens the editable notes/rating view.
 - Every stage overview card opens the selected stage with its plan, rating and comment controls available directly on the act cards.
+
+## New in v5.5
+
+- **Conflict warnings in My Plan:** overlapping saved acts are summarized with date, stages, times and exact overlap duration; affected act cards are highlighted.
+- **Now button:** during the festival, the schedule jumps to the currently playing act or the immediately following act for the selected stage and visibly highlights it.
+- **Day view:** My Plan can be filtered to a single festival day. Acts remain fully editable and are shown chronologically with free-time gaps between them.
+- All new controls, messages and guide text are translated into German, English, Spanish and Hungarian.
 
 See `FEATURE-AUDIT.md` for the completed checklist and the remaining source-data differences.
 

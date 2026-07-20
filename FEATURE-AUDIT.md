@@ -1,4 +1,4 @@
-# Feature audit — Ozora 2026 Planner v5.4
+# Feature audit — Ozora 2026 Planner v5.5
 
 ## Implemented
 
@@ -36,6 +36,9 @@
 - A professional, pre-filled import workbook with 303 act rows, stable IDs, input validation, filters, frozen panes, instructions and source notes.
 - Dedicated Indian Spirit tab with 15 confirmed artists; `GMS` maps to the scheduled `GMS & Dickster` act.
 - Interactive home statistics: Acts, Stages, Saved and Ratings navigate directly to editable content; the new stage overview opens each stage with full plan, rating and comment controls.
+- My Plan conflict warnings with exact overlap duration, affected-card highlights and direct access to the existing rating, note and save controls.
+- A schedule Now button that jumps to and highlights the live or immediately following act during the festival while respecting the selected stage.
+- A chronological per-day plan view with day chips and automatically calculated free-time gaps.
 
 ## Source-data differences that remain visible and documented
 
