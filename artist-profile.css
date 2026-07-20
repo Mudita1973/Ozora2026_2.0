@@ -231,3 +231,93 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* v5.4: interactive home statistics and editable stage overview */
+.stats .stat-button {
+  position: relative;
+  min-width: 112px;
+  color: var(--text);
+  text-align: left;
+  transition: transform .16s ease, border-color .16s ease, background .16s ease;
+}
+
+.stats .stat-button span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.stats .stat-button:hover,
+.stats .stat-button:focus-visible {
+  transform: translateY(-2px);
+  border-color: #ffffff66;
+  background: #070311b5;
+  outline: none;
+}
+
+.stage-overview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.stage-overview-card {
+  display: grid;
+  grid-template-columns: 12px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 96px;
+  padding: 18px;
+  border: 1px solid #ffffff1c;
+  border-left: 5px solid var(--stage);
+  border-radius: 19px;
+  background: linear-gradient(120deg, color-mix(in srgb, var(--stage) 17%, var(--surface)), var(--surface));
+  color: var(--text);
+  text-align: left;
+}
+
+.stage-overview-card:hover,
+.stage-overview-card:focus-visible {
+  border-color: var(--stage);
+  outline: none;
+}
+
+.stage-overview-card span:nth-child(2),
+.stage-overview-card strong,
+.stage-overview-card small {
+  display: block;
+}
+
+.stage-overview-card strong {
+  font-size: 1.05rem;
+}
+
+.stage-overview-card small {
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.stage-overview-card > b {
+  color: var(--stage);
+  font-size: 1.35rem;
+}
+
+.stage-overview-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--stage);
+  box-shadow: 0 0 18px var(--stage);
+}
+
+@media (max-width: 620px) {
+  .stats .stat-button {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .stage-overview {
+    grid-template-columns: 1fr;
+  }
+}

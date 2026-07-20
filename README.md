@@ -1,4 +1,4 @@
-# Ozora 2026 Festival Planner v5.3
+# Ozora 2026 Festival Planner v5.4
 
 This folder is ready for direct publication with GitHub Pages.
 
@@ -15,9 +15,9 @@ The `.nojekyll` file is intentional and must stay in the repository.
 After publishing, verify these two addresses:
 
 - `https://mudita1973.github.io/Ozora2026_2.0/DEPLOYMENT-CHECK.txt`
-- `https://mudita1973.github.io/Ozora2026_2.0/?v=530`
+- `https://mudita1973.github.io/Ozora2026_2.0/?v=540`
 
-If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=530` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v5.3** in the header and **All (303)** in the first tab.
+If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2.0/cache-reset.html?v=540` and use the reset button. On iPhone, also remove an older Home Screen installation and add the page again from Safari. The new version is identified by **Festival Planner · v5.4** in the header and **All (303)** in the first tab.
 
 ## New in v4.2
 
@@ -67,6 +67,13 @@ If an older design still appears, open `https://mudita1973.github.io/Ozora2026_2
 - Backup export rereads the latest persisted browser data immediately before creating the file.
 - Every backup filename now includes date, time, plan count and rating count, avoiding confusion between multiple same-day iPhone downloads.
 - Empty backups display a prominent warning during import, while the restore button appears before the longer notification note.
+
+## New in v5.4
+
+- `NEXT` is shown only during the main festival period and only on the single immediately following act for each stage.
+- `LIVE` is shown strictly between an act's actual start and end time.
+- The four home statistics are now real navigation buttons: Acts opens the complete editable schedule, Stages opens a new five-stage overview, Saved opens My Plan and Ratings opens the editable notes/rating view.
+- Every stage overview card opens the selected stage with its plan, rating and comment controls available directly on the act cards.
 
 See `FEATURE-AUDIT.md` for the completed checklist and the remaining source-data differences.
 

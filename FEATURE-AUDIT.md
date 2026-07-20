@@ -1,4 +1,4 @@
-# Feature audit — Ozora 2026 Planner v5.3
+# Feature audit — Ozora 2026 Planner v5.4
 
 ## Implemented
 
@@ -13,7 +13,7 @@
 - Tabs for all acts, every main stage, Routing and First Timer.
 - Day, rating and free-text filters.
 - My Plan page grouped by day with stage badge, share and clear-all actions.
-- Live and next-act state for 27 July–2 August, refreshed once per minute.
+- Strict live state only inside each act's start/end interval; next-act state only during 27 July–2 August and only for the immediately following act on each stage, refreshed once per minute.
 - Routing for personal ratings of 7+, grouped by day, with overlap alternatives and a top-five conflict section.
 - First Timer cards with DON'T MISS / CORE / RESET badges and Astro S / PsySmurfs credit.
 - Dark theme, stage colours, high-rating highlight, compact mode and cache-clear button.
@@ -35,6 +35,7 @@
 - Backup export count preview, unique timestamped filenames and a clear warning when a selected backup contains no plan or ratings.
 - A professional, pre-filled import workbook with 303 act rows, stable IDs, input validation, filters, frozen panes, instructions and source notes.
 - Dedicated Indian Spirit tab with 15 confirmed artists; `GMS` maps to the scheduled `GMS & Dickster` act.
+- Interactive home statistics: Acts, Stages, Saved and Ratings navigate directly to editable content; the new stage overview opens each stage with full plan, rating and comment controls.
 
 ## Source-data differences that remain visible and documented
 
